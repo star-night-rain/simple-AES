@@ -20,7 +20,11 @@ def encode():
 
 @app.post('/AES/decode')
 def decode():
-    return None
+    data = request.get_json()
+    print(data)
+    ciphertext = data['ciphertext']
+    secret_key = data['secretKey']
+    return jsonify(decrypt(ciphertext, secret_key))
 
 
 @app.route('/AES/crack')

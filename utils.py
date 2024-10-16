@@ -99,12 +99,12 @@ def mix_columns(mid_text, x, y):
     return s00 + s10 + s01 + s11
 
 
-def encrypt_round_function(original_text, secret_key, last=False):
+def encrypt_round_function(plaintext, secret_key, last=False):
     mid_text = ''
     # print('round')
     # sub bytes
-    for i in range(0, len(original_text), 4):
-        mid_text += constant.SUBSTITUTION_BOX[int(original_text[i:i + 2], 2), int(original_text[i + 2:i + 4], 2)]
+    for i in range(0, len(plaintext), 4):
+        mid_text += constant.SUBSTITUTION_BOX[int(plaintext[i:i + 2], 2), int(plaintext[i + 2:i + 4], 2)]
     # print(mid_text)
     # shift row
     mid_text = mid_text[0:4] + mid_text[12:16] + mid_text[8:12] + mid_text[4:8]
@@ -122,5 +122,18 @@ def encrypt_round_function(original_text, secret_key, last=False):
     return state
 
 
-def decrypt_round_function():
-    pass
+def decrypt_round_function(ciphertext, secret_key, last=False):
+    ciphertext = ciphertext[0:4] + ciphertext[12:16] + ciphertext[8:12] + ciphertext[4:8]
+
+    mid_text = ''
+
+    for i in range(0, len(ciphertext), 4):
+        mid_text += constant.INVERSE_SUBSTITUTION_BOX[int(ciphertext[i:i + 2], 2), int(ciphertext[i + 2:i + 4], 2)]
+
+    mid_text = xor(mid_text, secret_key)
+
+    state = mid_text
+    if not last:
+        state = mix_columns(mid_text, '1001', '0010')
+
+    return state
