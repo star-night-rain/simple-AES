@@ -137,3 +137,29 @@ def decrypt_round_function(ciphertext, secret_key, last=False):
         state = mix_columns(mid_text, '1001', '0010')
 
     return state
+
+
+def char_to_binary(char):
+    ascii_code = ord(char)
+    binary_string = format(ascii_code, '08b')
+    return binary_string
+
+
+def binary_to_char(binary_string):
+    ascii_code = int(binary_string, 2)
+    char = chr(ascii_code)
+    return char
+
+
+def preprocess(text):
+    if len(text) % 2 == 1:
+        text += ' '
+    return text
+
+
+def generate_secret_keys(secret_keys, current_key):
+    if len(current_key) == 16:
+        secret_keys.append(current_key)
+        return
+    generate_secret_keys(secret_keys, current_key + '0')
+    generate_secret_keys(secret_keys, current_key + '1')
