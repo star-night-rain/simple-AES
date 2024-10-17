@@ -1,19 +1,18 @@
-from flask import Flask, request, jsonify
-from models import *
+from flask import request, Flask
+from flask_cors import CORS
+
 import AES
-from config import JsonFlask
+from models import *
+from result import flask_response
 
-app = JsonFlask(__name__)
-
-
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+app = Flask(__name__)
+CORS(app)
 
 
 @app.post('/aes/encrypt/single/<data_type>')
 def single_encrypt(data_type):
     data = request.get_json()
+    print(data)
     plaintext = data['plaintext']
     secret_key = data['secretKey']
     ciphertext = None
@@ -25,7 +24,7 @@ def single_encrypt(data_type):
 
     result = AesEncryption(ciphertext)
 
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/encrypt/double')
@@ -37,7 +36,7 @@ def double_encrypt():
 
     result = AesEncryption(ciphertext)
 
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/encrypt/triple/<version>')
@@ -53,7 +52,7 @@ def triple_encrypt(version):
         ciphertext = AES.triple_aes_encrypt_v2(plaintext, secret_key)
 
     result = AesEncryption(ciphertext)
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/decrypt/single/<data_type>')
@@ -70,7 +69,7 @@ def single_decrypt(data_type):
 
     result = AesDecryption(plaintext)
 
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/decrypt/double')
@@ -81,7 +80,7 @@ def double_decrypt():
 
     plaintext = AES.double_aes_decrypt(ciphertext, secret_key)
     result = AesDecryption(plaintext)
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/decrypt/triple/<version>')
@@ -96,7 +95,7 @@ def triple_decrypt(version):
     elif version == 'v2':
         plaintext = AES.triple_aes_decrypt_v2(ciphertext, secret_key)
     result = AesDecryption(plaintext)
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/crack')
@@ -104,9 +103,9 @@ def crack():
     data = request.get_json()
     plaintexts = data['plaintexts']
     ciphertexts = data['ciphertexts']
-    count, secret_kyes, duration = AES.crack(plaintexts, ciphertexts)
-    result = AesCrack(count, secret_kyes, duration)
-    return result
+    count, secret_keys, duration = AES.crack(plaintexts, ciphertexts)
+    result = AesCrack(count, secret_keys, duration)
+    return flask_response(result)
 
 
 @app.post('/aes/cbc/encrypt')
@@ -117,7 +116,7 @@ def cbc_encrypt():
     initial_vector = data['initialVector']
     ciphertext = AES.cbc_encrypt(plaintext, secret_key, initial_vector)
     result = AesEncryption(ciphertext)
-    return result
+    return flask_response(result)
 
 
 @app.post('/aes/cbc/decrypt')
@@ -128,12 +127,12 @@ def cbc_decrypt():
     initial_vector = data['initialVector']
     plaintext = AES.cbc_decrypt(ciphertext, secret_key, initial_vector)
     result = AesDecryption(plaintext)
-    return result
+    return flask_response(result)
 
 
 @app.errorhandler(Exception)
 def error_handler(error):
-    return Result.error(str(error))
+    return flask_response(str(error))
 
 
 if __name__ == '__main__':
