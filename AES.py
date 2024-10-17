@@ -26,7 +26,7 @@ def single_aes_decrypt(ciphertext, secret_key):
 
 def encrypt_bit(plaintext, secret_key):
     ciphertext = single_aes_encrypt(plaintext, secret_key)
-    return {'ciphertext': ciphertext}
+    return ciphertext
 
 
 def encrypt_string(plaintext, secret_key):
@@ -142,7 +142,7 @@ def crack(plaintexts, ciphertexts):
     duration = f'{end_time - start_time:.3f}'
     print(f'duration:{duration}s')
 
-    return keys
+    return len(keys), keys, duration
 
 
 def check_secret_key(plaintext, ciphertext, key1, key2):
