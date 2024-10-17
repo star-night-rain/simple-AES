@@ -82,7 +82,7 @@ def expand_secret_key(secret_key):
         secret_keys.append(new_left + new_right)
         left = new_left
         right = new_right
-    print(f'secret_keys: {secret_keys}')
+    # print(f'secret_keys: {secret_keys}')
     return secret_keys
 
 
