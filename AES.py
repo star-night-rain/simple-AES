@@ -41,7 +41,7 @@ def encrypt_string(plaintext, secret_key):
 
 def decrypt_bit(ciphertext, secret_key):
     plaintext = single_aes_decrypt(ciphertext, secret_key)
-    return {'plaintext': plaintext}
+    return plaintext
 
 
 def decrypt_string(ciphertext, secret_key):
@@ -60,41 +60,41 @@ def decrypt_string(ciphertext, secret_key):
 def double_aes_encrypt(plaintext, secret_key):
     mid_text = encrypt_string(plaintext, secret_key[0:16])
     ciphertext = encrypt_string(mid_text, secret_key[16:32])
-    return {'ciphertext': ciphertext}
+    return ciphertext
 
 
 def double_aes_decrypt(ciphertext, secret_key):
     mid_text = decrypt_string(ciphertext, secret_key[16:32])
     plaintext = decrypt_string(mid_text, secret_key[0:16])
-    return {'plaintext': plaintext}
+    return plaintext
 
 
 def triple_aes_encrypt_v1(plaintext, secret_key):
     mid_text = encrypt_string(plaintext, secret_key[0:16])
     mid_text = encrypt_string(mid_text, secret_key[16:32])
     ciphertext = encrypt_string(mid_text, secret_key[0:16])
-    return {'ciphertext': ciphertext}
+    return ciphertext
 
 
 def triple_aes_encrypt_v2(plaintext, secret_key):
     mid_text = encrypt_string(plaintext, secret_key[0:16])
     mid_text = encrypt_string(mid_text, secret_key[16:32])
     ciphertext = encrypt_string(mid_text, secret_key[32:48])
-    return {'ciphertext': ciphertext}
+    return ciphertext
 
 
 def triple_aes_decrypt_v1(ciphertext, secret_key):
     mid_text = decrypt_string(ciphertext, secret_key[0:16])
     mid_text = decrypt_string(mid_text, secret_key[16:32])
     plaintext = decrypt_string(mid_text, secret_key[0:16])
-    return {'plaintext': plaintext}
+    return plaintext
 
 
 def triple_aes_decrypt_v2(ciphertext, secret_key):
     mid_text = decrypt_string(ciphertext, secret_key[32:48])
     mid_text = decrypt_string(mid_text, secret_key[16:32])
     plaintext = decrypt_string(mid_text, secret_key[0:16])
-    return {'plaintext': plaintext}
+    return plaintext
 
 
 def binary_search(sorted_values, target):
