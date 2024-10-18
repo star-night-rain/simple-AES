@@ -11,7 +11,7 @@ functionality levels.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Contributor](#contributors)
+- [Contributors](#contributors)
 
 ## Introduction
 
@@ -80,7 +80,7 @@ files:
 
 ## Contributors
 
-The project has two contributors.
+The project has two contributors:
 
 - [Weizhe Chen](https://github.com/star-night-rain): Implemented the simple AES algorithm along with various
   adaptations, ensuring robust encryption and
