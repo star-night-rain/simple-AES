@@ -10,6 +10,8 @@ functionality levels.
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
+    - [Run](#run)
+    - [Test](#test)
 - [Project Structure](#project-structure)
 - [Contributors](#contributors)
 
