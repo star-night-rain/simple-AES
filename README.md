@@ -8,7 +8,7 @@ functionality levels.
 
 - [Introduction](#introduction)
 - [Dependencies](#dependencies)
-- [Installment](#installment)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributor](#contributors)
@@ -24,15 +24,15 @@ modification on decryption results.
 
 ## Dependencies
 
-Before you get started, please ensure that you environment is set up with the necessary dependencies. The following
-packages are crucial for the project to function correctly:
+Before you set up, please ensure that you environment is set up with the necessary dependencies. The following
+packages are essential for the project:
 
 - python = 3.9.19
 - Flask = 2.2.5
 - Flask_Cors = 5.0.0
 - numpy = 1.26.4
 
-## Installment
+## Installation
 
 To set up the project, you need to install the required dependencies. You can do this by running the following command:
 
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Once the installment is complete, you can start using the project. Here are the main commands to get you started.
+Once the installation is complete, you can start using the project. Here are the main commands to get you started.
 
 ### Run
 
@@ -54,7 +54,7 @@ flask run
 
 ### Test
 
-To run the tests and ensure everything correctly, you can use the following command:
+To run the tests and ensure everything functions correctly, you can use the following command:
 
 ```
 python -m unittest test.py
@@ -64,7 +64,7 @@ If you wish to run additional tests, please refer to the project's Application P
 
 ## Project Structure
 
-The structure of this project is designed to enhance maintainability and scalability.Below is a description of the main
+The structure of this project is designed to enhance maintainability and scalability. Below is a description of the main
 files:
 
 - `app.py`: The main application file that initializes the Flask app, handles routing, and serves as the entry point for
@@ -74,7 +74,7 @@ files:
 - `models.py`: Defines classes that encapsulate the result data structures.
 - `constant.py`: Stores constant values used throughout the application.
 - `result.py`: Handles the unified packaging of results returned by the application.
-- `test.py`: Contains a pair of tests cases for encrypting and decrypting strings.
+- `test.py`: Contains a set of tests cases for encrypting and decrypting strings.
 - `requirements.txt`: Lists all the dependencies required for the project.
 - `README.md`: Provides an overview of the project.
 
@@ -87,4 +87,4 @@ The project has two contributors.
   decryption functionality.
 - [Jiafan Yu](https://github.com/NoTalentPlayer): Responsible for frontend development, enhancing the user interface and
   experience to ensure a seamless
-  interaction with application.
+  interaction with the application.
