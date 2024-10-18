@@ -57,8 +57,10 @@ flask run
 To run the tests and ensure everything correctly, you can use the following command:
 
 ```
-12
+python -m unittest test.py
 ```
+
+If you wish to run additional tests, please refer to the project's Application Program Interface documentation.
 
 ## Project Structure
 
@@ -72,6 +74,7 @@ files:
 - `models.py`: Defines classes that encapsulate the result data structures.
 - `constant.py`: Stores constant values used throughout the application.
 - `result.py`: Handles the unified packaging of results returned by the application.
+- `test.py`: Contains a pair of tests cases for encrypting and decrypting strings.
 - `requirements.txt`: Lists all the dependencies required for the project.
 - `README.md`: Provides an overview of the project.
 
@@ -79,7 +82,9 @@ files:
 
 The project has two contributors.
 
-- `Weizhe Chen`: Implemented the simple AES algorithm along with various adaptations, ensuring robust encryption and
+- [Weizhe Chen](https://github.com/star-night-rain): Implemented the simple AES algorithm along with various
+  adaptations, ensuring robust encryption and
   decryption functionality.
-- `Jiafan Yu`: Responsible for frontend development, enhancing the user interface and experience to ensure a seamless
+- [Jiafan Yu](https://github.com/NoTalentPlayer): Responsible for frontend development, enhancing the user interface and
+  experience to ensure a seamless
   interaction with application.
