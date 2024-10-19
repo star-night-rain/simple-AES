@@ -71,7 +71,8 @@ To run the tests and ensure everything functions correctly, you can use the foll
 python -m unittest test.py
 ```
 
-If you wish to run additional tests, please refer to the project's Application Program Interface documentation.
+If you wish to run additional tests, please refer to the project's Application Program Interface
+documentation(`API.pdf`).
 
 ## Project Structure
 

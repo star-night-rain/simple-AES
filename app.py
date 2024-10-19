@@ -177,7 +177,7 @@ def cbc_decrypt():
 
 @app.errorhandler(Exception)
 def error_handler(error):
-    return flask_response(str(error))
+    return flask_response(str(error), 'error')
 
 
 if __name__ == '__main__':
