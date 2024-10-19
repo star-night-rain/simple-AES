@@ -56,6 +56,13 @@ To execute the project, use the following command:
 flask run
 ```
 
+Next, open your web browser and enter the following URL to
+access the application:
+
+```
+http://127.0.0.1:5000/
+```
+
 ### Test
 
 To run the tests and ensure everything functions correctly, you can use the following command:
