@@ -1,0 +1,31 @@
+body{
+    background-color: #f0f0f0;
+}
+h1 {
+    font-size: 3em;
+    color: black;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+p {
+    font-size: 1.25em;
+    color: black;
+    text-align: left;
+    margin: 30px auto 20px;
+    line-height: 3;
+    width: 80%;
+    font-family: Arial, sans-serif;
+}
+
+.Link1{
+    display: block;
+    font-size: 1.25em;
+    text-align: center;
+    margin: 50px auto 20px;
+    width: 80%;
+    color: lightskyblue;
+    text-decoration: none;
+
+}

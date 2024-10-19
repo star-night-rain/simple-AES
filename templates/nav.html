@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="/static/css/nav_style.css">
+</head>
+<body>
+<div id="nav">
+    <ul>
+        <li><a href="{{ url_for('index') }}">算法介绍</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('encryption') }}" class="a1">加密</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('decryption') }}" class="a2">解密</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('double_encryption') }}">双重加密</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('triple_encryption_v1') }}">三重加密V1</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('triple_encryption_v2') }}">三重加密V2</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('cbc_encryption') }}">cbc加密</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('crack') }}">破解</a></li>
+        <span>|</span>
+        <li><a href="{{ url_for('about_us') }}">关于我们</a></li>
+    </ul>
+
+</div>
+</body>
+</html>

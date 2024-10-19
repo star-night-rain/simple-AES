@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripleV1</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div id="nav">
+    {% include 'nav.html' %}
+</div>
+<div class="container">
+    <div class="image-container">
+        <img src="/static/images/p22.jpg" alt="Placeholder Image">
+    </div>
+    <div class="input-group-container">
+        <div class="input-group-container1">
+            <h1>S-AES</h1>
+            <div class="input-group">
+                <label for="inputText">明文/密文:</label>
+                <input type="text" id="inputText" placeholder="请输入明文/密文">
+            </div>
+            <div class="input-group">
+                <label for="secretKey">密钥:</label>
+                <input type="text" id="secretKey" placeholder="请输入密钥">
+            </div>
+        </div>
+        <div class="input-group-container2">
+            <div class="button-group">
+                <button id="TripleV1EncryptBtn">三重加密V1</button>
+                <button id="TripleV1DecryptBtn">三重解密V1</button>
+            </div>
+            <div class="input-group">
+                <label for="outputResult">加密/解密结果:</label>
+                <input type="text" id="outputResult" readonly placeholder="加密/解密的结果">
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="/static/js/TripleV1_script.js"></script>
+</body>
+</html>

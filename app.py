@@ -1,4 +1,4 @@
-from flask import request, Flask
+from flask import request, Flask, render_template
 from flask_cors import CORS
 
 import AES
@@ -7,6 +7,51 @@ from result import flask_response
 
 app = Flask(__name__)
 CORS(app)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/encryption')
+def encryption():
+    return render_template('Encryption.html')
+
+
+@app.route('/decryption')
+def decryption():
+    return render_template('Decryption.html')
+
+
+@app.route('/double_encryption')
+def double_encryption():
+    return render_template('Double.html')
+
+
+@app.route('/triple_encryption_v1')
+def triple_encryption_v1():
+    return render_template('TripleV1.html')
+
+
+@app.route('/triple_encryption_v2')
+def triple_encryption_v2():
+    return render_template('TripleV2.html')
+
+
+@app.route('/cbc_encryption')
+def cbc_encryption():
+    return render_template('cbc.html')
+
+
+@app.route('/crack')
+def crack():
+    return render_template('Crack.html')
+
+
+@app.route('/about_us')
+def about_us():
+    return render_template('AboutUs.html')
 
 
 @app.post('/aes/encrypt/single/<data_type>')
@@ -99,7 +144,7 @@ def triple_decrypt(version):
 
 
 @app.post('/aes/crack')
-def crack():
+def brute_force_attack():
     data = request.get_json()
     plaintexts = data['plaintexts']
     ciphertexts = data['ciphertexts']

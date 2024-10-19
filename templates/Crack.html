@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack</title>
+    <link rel="stylesheet" href="/static/css/Crack_style.css">
+</head>
+<body>
+<div id="nav">
+    {% include 'nav.html' %}
+</div>
+<div class="container">
+    <div class="image-container">
+        <img src="/static/images/p22.jpg" alt="Placeholder Image">
+    </div>
+    <div class="input-group-container">
+        <div class="input-group-container1">
+            <h1>S-AES</h1>
+            <div class="input-group">
+                <label for="inputText1">明文:</label>
+                <input type="text" id="inputText1" placeholder="请输入明文，并以英文逗号分隔">
+            </div>
+            <div class="input-group">
+                <label for="inputText2">密文:</label>
+                <input type="text" id="inputText2" placeholder="请输入密文，并以英文逗号分隔">
+            </div>
+        </div>
+        <div class="input-group-container2">
+            <div class="button-group">
+                <button id="CrackBtn">破解</button>
+            </div>
+            <div class="input-group">
+                <label for="outputResult">密钥:</label>
+                <input type="text" id="outputResult" readonly placeholder="密钥">
+                <label for="Time">花费时间（s）:</label>
+                <input type="text" id="Time" readonly placeholder="花费时间（s）">
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="/static/js/Crack_script.js"></script>
+</body>
+</html>
