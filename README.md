@@ -85,6 +85,8 @@ files:
 - `constant.py`: Stores constant values used throughout the application.
 - `result.py`: Handles the unified packaging of results returned by the application.
 - `test.py`: Contains a set of tests cases for encrypting and decrypting strings.
+- `API.pdf`: Provides detailed documentation of the API.
+- `report.pdf`: Summarizes the test results of the S-AES algorithm.
 - `requirements.txt`: Lists all the dependencies required for the project.
 - `README.md`: Provides an overview of the project.
 
