@@ -4,6 +4,8 @@ The project implements the S-AES(Simplified Advanced Encryption Standard) algori
 offering a comprehensive framework for encryption and decryption tasks across various
 functionality levels.
 
+**Demo Address**: http://8.137.22.197:5000/
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -69,6 +71,12 @@ If you wish to run additional tests, please refer to the project's Application P
 The structure of this project is designed to enhance maintainability and scalability. Below is a description of the main
 files:
 
+- `static/`: Contains all static files that are served directly to the client.
+    - `css`: Stylesheets for the project, defining the visual appearance.
+    - `images`: Contains images used in the application.
+    - `js`: JavaScript files that provide interactivity and dynamic features.
+    - `pdfs`: PDF documents related to the project.
+- `templates`: Contains HTML templates for rendering the web pages.
 - `app.py`: The main application file that initializes the Flask app, handles routing, and serves as the entry point for
   the application.
 - `AES.py`: Contains the primary implementations of algorithms.
