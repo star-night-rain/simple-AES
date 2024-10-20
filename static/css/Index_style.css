@@ -1,6 +1,7 @@
-body{
+body {
     background-color: #f0f0f0;
 }
+
 h1 {
     font-size: 3em;
     color: black;
@@ -9,6 +10,7 @@ h1 {
     margin-bottom: 10px;
     font-family: 'Dancing Script', cursive;
 }
+
 p {
     font-size: 1.25em;
     color: black;
@@ -19,7 +21,7 @@ p {
     font-family: Arial, sans-serif;
 }
 
-.Link1{
+.Link1 {
     display: block;
     font-size: 1.25em;
     text-align: center;
@@ -28,4 +30,14 @@ p {
     color: lightskyblue;
     text-decoration: none;
 
+}
+
+.Link2 {
+    display: block;
+    font-size: 1.25em;
+    text-align: center;
+    margin: 100px auto 20px;
+    width: 80%;
+    color: blue;
+    text-decoration: none;
 }
